@@ -80,3 +80,8 @@
   tags:
     - crayfish
     - crayfish-houdini
+
+- include: fits.yml
+  tags:
+    - crayfish
+    - crayfish-fits

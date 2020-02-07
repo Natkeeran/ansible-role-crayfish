@@ -173,3 +173,6 @@ crayfish_recast_prefixes:
   pcdmuse: "http://pcdm.org/use#"
   webac: "http://fedora.info/definitions/v4/webac#"
   vcard: "http://www.w3.org/2006/vcard/ns#"
+
+crayfits_home: /var/www/html
+webserver_app_user: "{% if ansible_os_family == 'RedHat' %}apache{% else %}www-data{% endif %}"
