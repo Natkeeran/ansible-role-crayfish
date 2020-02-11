@@ -176,3 +176,4 @@ crayfish_recast_prefixes:
 
 crayfits_home: /var/www/html
 webserver_app_user: "{% if ansible_os_family == 'RedHat' %}apache{% else %}www-data{% endif %}"
+crayfits_web_service_url: "http://localhost:8080/fits/"

@@ -70,3 +70,19 @@
   ignore_errors: yes
   when: crayfits.stat.exists == False
   become: true
+
+- name: Remove CrayFits env file
+  file:
+    path: "{{ item }}"
+    state: absent
+  with_items:
+    - "{{ crayfits_home }}/CrayFits/.env"
+
+- name: Create CrayFits env file with template
+  template:
+    src: "env.j2"
+    dest: "{{ crayfits_home }}/CrayFits/.env"
+    owner: "{{ webserver_app_user }}"
+    group: "{{ webserver_app_user }}"
+    force: no
+  register: crayfits_env_file
